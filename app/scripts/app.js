@@ -21,6 +21,16 @@ blocitoff.controller('Home.controller', ['$scope', function($scope) {
 
 }]);
 
+/*var myDataRef = new Firebase('https://shining-inferno-4672.firebaseio.com/');
+
+$('#task').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var task = $('#task').val();
+          //var text = $('#messageInput').val();
+          myDataRef.set('User ' + name + ' says ' + text);
+          $('#task').val('');
+        }
+      });
  
 
-
+*/
