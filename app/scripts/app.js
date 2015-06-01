@@ -1,5 +1,5 @@
 
-blocitoff = angular.module('Blocitoff', ['ui.router']);
+blocitoff = angular.module('Blocitoff', ['ui.router', 'firebase']);
 
 blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
    $locationProvider.html5Mode({
@@ -15,22 +15,37 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
 
  }]);
 
-blocitoff.controller('Home.controller', ['$scope', function($scope) {
-  
+/* BACKEND CODE */
+
+blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
   $scope.subText = "Welcome to the home page of Blocitoff";
+
+  var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
+
+  $scope.messages = $firebaseArray(ref);
+
+          //ADD MESSAGE METHOD
+          $scope.addMessage = function(e) {
+
+            //LISTEN FOR RETURN KEY
+            if (e.keyCode === 13 && $scope.msg) {
+              //ALLOW CUSTOM OR ANONYMOUS USER NAMES
+              var name = $scope.name || "anonymous";
+
+              //ADD TO FIREBASE
+              $scope.messages.$add({
+                from: name,
+                body: $scope.msg
+              });
+
+              //RESET MESSAGE
+              $scope.msg = "";
+              
+            }
+          }
+  
 
 }]);
 
-/*var myDataRef = new Firebase('https://shining-inferno-4672.firebaseio.com/');
 
-$('#task').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var task = $('#task').val();
-          //var text = $('#messageInput').val();
-          myDataRef.set('User ' + name + ' says ' + text);
-          $('#task').val('');
-        }
-      });
- 
 
-*/
