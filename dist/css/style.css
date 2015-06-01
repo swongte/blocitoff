@@ -1,4 +1,6 @@
-.main {
-  background: gray; }
-  .main h2 {
-    color: purple; }
+/* home page css */
+.list-header {
+  background: #848484;
+  font-family: Arial; }
+  .list-header h2 {
+    color: #81F7F3; }

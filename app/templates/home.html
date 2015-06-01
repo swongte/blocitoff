@@ -1,11 +1,27 @@
 <h1>Blocitoff</h1>
 <h3> {{ subText }}</h3>
 
-<div class='main'>
-	<div class='list-header'>
+
+<div class='list-header'>
 	<h2>Current Tasks</h2>
 
-	  <input type='text' id='task' placeholder='Task'>
-      <!--<input type='text' id='messageInput' placeholder='Message'>-->
+      <div class="example-chat l-demo-container">
+
+      <div class="example-chat-toolbar">
+        <label for="nameInput">Username:</label>
+        <input ng-model="name" type="text" id="nameInput" placeholder="enter a username...">
+      </div>
+
+      <ul id="example-messages" class="example-chat-messages">
+        <li ng-repeat="msg in messages">
+          <strong class="example-chat-username">{{ msg.from }}</strong>
+          {{ msg.body }}
+        </li>
+      </ul>
+
+      <footer>
+        <input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Enter a task">
+      </footer>
+
   </div>
 </div>
