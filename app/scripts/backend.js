@@ -1,5 +1,4 @@
-/*var app = angular.module("Blocitoff", ["firebase"]);
 
-console.log('hello');
 
-*/
+//console.log('hello there');
+
