@@ -1,3 +1,5 @@
+require("./backend");
+
 
 blocitoff = angular.module('Blocitoff', ['ui.router', 'firebase']);
 
@@ -13,12 +15,20 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
      templateUrl: '/templates/home.html'
    });
 
+   $stateProvider.state('submit', {
+     url: '/submitview',
+     controller: 'Submit.controller',
+     templateUrl: '/templates/submitview.html'
+   });
+
+
+
  }]);
 
 /* BACKEND CODE */
 
 blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
-  $scope.subText = "Welcome to the home page of Blocitoff";
+  //$scope.subText = "Welcome to the home page of Blocitoff";
 
   var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
 
@@ -26,15 +36,15 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
 
           //ADD MESSAGE METHOD
           $scope.addMessage = function(e) {
-
+          	
             //LISTEN FOR RETURN KEY
             if (e.keyCode === 13 && $scope.msg) {
               //ALLOW CUSTOM OR ANONYMOUS USER NAMES
-              var name = $scope.name || "anonymous";
+              //var name = $scope.name || "anonymous";
 
               //ADD TO FIREBASE
               $scope.messages.$add({
-                from: name,
+                //from: name,
                 body: $scope.msg
               });
 
@@ -46,6 +56,37 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
   
 
 }]);
+
+blocitoff.controller('Submit.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+  //$scope.subText ="hello";
+  var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
+
+  $scope.messages = $firebaseArray(ref);
+
+          //ADD MESSAGE METHOD
+          $scope.addMessage = function(e) {
+          	
+            //LISTEN FOR RETURN KEY
+            if (e.keyCode === 13 && $scope.msg) {
+              //ALLOW CUSTOM OR ANONYMOUS USER NAMES
+              //var name = $scope.name || "anonymous";
+
+              //ADD TO FIREBASE
+              $scope.messages.$add({
+                //from: name,
+                body: $scope.msg
+              });
+
+              //RESET MESSAGE
+              $scope.msg = "";
+              
+            }
+          }
+
+  
+	}]);
+
+
 
 
 
