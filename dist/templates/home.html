@@ -1,17 +1,17 @@
 
 <div class='task-container-main'>
 
-	<!--<div class="task-input">
+	<div class="task-input">
       	<input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="taskInput"  placeholder="Enter a task">
         
-      </div>-->
+      </div>
 
       <h3>Current Tasks</h3>
 
       <div class="task-container">
 
       <ul id="tasks" class="list-of-tasks">
-        <li ng-repeat="msg in messages">
+        <li ng-hide="msg.body == 'hello'" ng-repeat="msg in messages">
           {{ msg.body }}
         </li>
       </ul>
