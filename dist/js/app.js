@@ -51,43 +51,37 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
               
               var taskDate = new Date();
               $scope.taskDate = taskDate.getTime();
-              //var value = taskDate.getTime();
               console.log($scope.taskDate);
 
               //ADD TO FIREBASE
               $scope.messages.$add({
                 date: $scope.taskDate,
-                //timestamp: Firebase.ServerValue.TIMESTAMP,
                 body: $scope.msg
               });
 
               //RESET MESSAGE
               $scope.msg = "";
 
-    
-
+              
             }
           }
 
-   
-   /*
-   $scope.dateCheck = function(value){
-   	 
-   	 //pass in the date of when task was written
+   $scope.isValid = function(dateTaskSaved){
+   	 var d = new Date();
+   	 var currentDate = d.getTime();
      
-     //if task date is older than 7 days
-     //evaluate to false and hide task
+     //testDate is the cut-off date limit--if a task is older than this date
+     //than it will not be displayed
+     var testDate = currentDate - 172800000;
 
-     //else task date is not older than 7
-     //days and function returns true
+     if (dateTaskSaved < testDate)
+       return true;  //true hides the task
+     else 
+       return false; //false displays the task
 
-     if (value % 2 == 0){
-     	return true;
-     else
-     	return false;
-     
 
-   }*/
+    }
+
   
 
 }]);
