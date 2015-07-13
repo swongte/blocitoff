@@ -1,19 +1,17 @@
+  <div class='task-container-main'>
 
-<div class='task-container-main'>
-
-	
 
 	<div class="task-input">
       	<input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="taskInput"  placeholder="Enter a task">
         
       </div>
 
-      <h3>Current Tasks</h3>
+      <h3>Task History</h3>
 
       <div class="task-container">
 
       <ul id="tasks" class="list-of-tasks">
-        <li ng-repeat="msg in messages" ng-hide="isValid(msg.date)">
+        <li ng-repeat="msg in messages">
           {{ msg.body }}
         </li>
       </ul>

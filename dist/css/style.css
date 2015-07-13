@@ -9,6 +9,19 @@ body {
   margin-top: 40px;
   margin-bottom: 30px; }
 
+.nav-links {
+  text-align: center;
+  /*.home-current a.home-current, .history-current a.history-current{
+    		background:blue;
+            color:white;
+    	}*/ }
+  .nav-links li {
+    display: inline; }
+  .nav-links a {
+    display: inline-block;
+    padding-bottom: 20px;
+    font-family: Arial; }
+
 /* home page css */
 .task-container-main {
   font-family: Arial;
@@ -29,7 +42,7 @@ body {
     margin-top: 5px;
     margin-bottom: 10px; }
 
-/* submit view */
+/* Task history view */
 /*** CSS RESET **/
 /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)

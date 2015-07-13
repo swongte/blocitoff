@@ -39,7 +39,7 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
      
      //testDate is the cut-off date limit--if a task is older than this date
      //than it will not be displayed
-     var testDate = currentDate - 172800000;
+     var testDate = currentDate - 604800000;
 
      if (dateTaskSaved < testDate)
        return true;  //true hides the task
@@ -53,7 +53,7 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
 
 }]);
 
-blocitoff.controller('Submit.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+blocitoff.controller('History.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
   //$scope.subText ="hello";
   var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
 

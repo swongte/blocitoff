@@ -16,10 +16,10 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
      templateUrl: '/templates/home.html'
    });
 
-   $stateProvider.state('submit', {
-     url: '/submitview',
-     controller: 'Submit.controller',
-     templateUrl: '/templates/submitview.html'
+   $stateProvider.state('taskhistory', {
+     url: '/taskhistory',
+     controller: 'History.controller',
+     templateUrl: '/templates/taskhistory.html'
    });
 
 
