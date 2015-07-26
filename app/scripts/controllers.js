@@ -1,7 +1,6 @@
+blocitoff = angular.module('Blocitoff');
 
-blocitoff = angular.module('Blocitoff', ['ui.router', 'firebase']);
-
-blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($scope, $firebaseArray, helloFromFactory) {
+	blocitoff.controller('Home.controller', ['helloFromFactory','$scope', '$firebaseArray', function($scope, $firebaseArray, helloFromFactory) {
   //$scope.subText = "Welcome to the home page of Blocitoff";
 
   var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
@@ -49,7 +48,7 @@ blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', function($s
 
     }
 
-    $scope.fromFactory = helloFromFactory.sayHello("World");
+    //$scope.fromFactory = helloFromFactory.sayHello("World");
 
    
   
@@ -106,5 +105,8 @@ blocitoff.controller('History.controller', ['$scope', '$firebaseArray', function
 
   
 	}]);
+
+
+
 
 

@@ -1,4 +1,3 @@
-
 blocitoff = angular.module('Blocitoff');
 
 blocitoff.factory('helloFromFactory', function () {
@@ -7,5 +6,5 @@ blocitoff.factory('helloFromFactory', function () {
         sayHello: function(text){
             return "Factory says \"Hello " + text + "\"";
         }
-
+  }
 });

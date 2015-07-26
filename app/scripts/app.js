@@ -1,7 +1,9 @@
+blocitoff = angular.module('Blocitoff', ['ui.router', 'firebase']);
+
 require("./controllers");
+require("./services");
 
 
-blocitoff = angular.module('Blocitoff');
 
 
 blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
