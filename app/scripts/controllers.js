@@ -1,6 +1,6 @@
 blocitoff = angular.module('Blocitoff');
 
-	blocitoff.controller('Home.controller', ['$scope', '$firebaseArray', 'addToFirebaseFactory' function($scope, $firebaseArray, addToFirebaseFactory) {
+	blocitoff.controller('Home.controller', ['$scope', 'data' function($scope, data) {
   //$scope.subText = "Welcome to the home page of Blocitoff";
 
   /*var ref = new Firebase("https://shining-inferno-4672.firebaseio.com/");
@@ -32,7 +32,7 @@ blocitoff = angular.module('Blocitoff');
             }
           }*/
 
-     $scope.fromFbFactory = addToFirebaseFactory.saveTasks(msg);
+     $scope.fromFbFactory = data.saveTasks(msg);
 
    $scope.isValid = function(dateTaskSaved){
    	 var d = new Date();

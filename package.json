@@ -4,7 +4,8 @@
   "description": "Bloc skeleton project for a single page application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "grunt"
   },
   "author": "Bloc and Nick Ferraro",
   "license": "ISC",
